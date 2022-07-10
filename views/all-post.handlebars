@@ -1,6 +1,6 @@
 <!-- Loop over each post -->
-<div class="post">
-  {{#each posts as |post|}}
+{{#each posts as |post|}}
+  <div class="post">
     <h3>
       <a href="/post/{{id}}">
         <div>{{postTitle}}
@@ -15,5 +15,5 @@
     <p class="card-body">
       {{postContent}}
     </p>
-  {{/each}}
-</div>
+  </div>
+{{/each}}
