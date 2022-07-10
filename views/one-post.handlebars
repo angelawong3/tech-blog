@@ -1,0 +1,41 @@
+<div class="text-center">
+  <a href="/post/{{post.id}}">
+    <div>{{post.postTitle}}</div>
+  </a>
+  <p>{{post.postContent}}</p>
+  <p>Posted by
+    {{user.username}}
+    on
+    {{format_date post.postDate}}</p>
+</div>
+
+<form class="form new-comment-form">
+  <div class="form-group">
+    <label for="comment-content">Comment:</label>
+    <input
+      class="form-input"
+      type="text"
+      id="comment-content"
+      name="comment-content"
+    />
+  </div>
+
+  <div class="form-group">
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </div>
+</form>
+
+<div class="comments">
+  {{#each comments as |comment|}}
+    <div>
+      <p>
+        {{commentContent}}
+        -
+        {{user.username}}
+        {{format_date createdAt}}
+      </p>
+    </div>
+  {{/each}}
+</div>
+
+<script src="../public/js/comment.js"></script>
