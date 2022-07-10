@@ -10,7 +10,7 @@ router.get("/", withAuth, async (req, res) => {
       where: { userId: req.session.userId },
       include: [User],
     });
-    const posts = dbPostData.map((post) => post.get({ plain: true }));
+    const posts = dbPostData.map((post) => post.get({ raw: true }));
 
     res.render("all-post", {
       layout: "dashboard",
