@@ -9,7 +9,7 @@ module.exports = router;
 router.get("/", async (req, res) => {
   try {
     const dbPostData = await Post.findAll({
-      include: [{ model: User }],
+      include: [User],
     });
     const posts = dbPostData.map((post) => post.get({ raw: true }));
     console.log(posts);
