@@ -9,11 +9,19 @@ module.exports = router;
 router.get("/", async (req, res) => {
   try {
     const dbPostData = await Post.findAll({
-      include: [User],
+      include: [
+        {
+          model: User,
+          attributes: ["username"],
+        },
+      ],
     });
     const posts = dbPostData.map((post) => post.get({ raw: true }));
 
-    res.render("all-post", posts);
+    res.render("all-post", {
+      posts,
+      logged_in: req.session.logged_in,
+    });
   } catch (err) {
     res.status(500).json(err);
   }
