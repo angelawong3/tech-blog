@@ -30,24 +30,4 @@ router.get("/new", withAuth, (req, res) => {
   });
 });
 
-// to edit existing post
-router.get("/edit/:id", withAuth, async (req, res) => {
-  try {
-    const dbPostData = await Post.findByPk(req.params.id);
-
-    if (dbPostData) {
-      const post = dbPostData.get({ plain: true });
-      res.render("edit-post", {
-        layout: "dashboard",
-        post,
-        loggedIn: req.session.loggedIn,
-      });
-    } else {
-      res.status(404).end();
-    }
-  } catch (err) {
-    res.redirect("login");
-  }
-});
-
 module.exports = router;
