@@ -1,0 +1,19 @@
+<!-- Loop over each post -->
+{{#each posts as |post|}}
+  <div class="post">
+    <h3>
+      <a href="/post/{{id}}">
+        <div>{{postTitle}}
+        </div>
+      </a>
+    </h3>
+    <div>Posted by
+      {{user.username}}
+      on
+      {{format_date createdAt}}
+    </div>
+    <p class="card-body">
+      {{postContent}}
+    </p>
+  </div>
+{{/each}}
