@@ -11,10 +11,6 @@ Comment.init(
       primaryKey: true,
       autoIncrement: true,
     },
-    commentDate: {
-      type: DataTypes.DATE,
-      allowNull: false,
-    },
     commentContent: {
       type: DataTypes.STRING,
       allowNull: false,
