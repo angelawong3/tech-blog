@@ -12,11 +12,11 @@ router.get("/", async (req, res) => {
       include: [
         {
           model: User,
-          attributes: ["username"],
         },
       ],
     });
     const posts = dbPostData.map((post) => post.get({ raw: true }));
+    console.log(posts);
 
     res.render("all-post", {
       posts,
