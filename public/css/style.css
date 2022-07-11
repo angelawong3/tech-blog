@@ -1,0 +1,65 @@
+:root {
+  --platinum: #d8e2dcff;
+  --unbleached-silk: #ffe5d9ff;
+  --pink: #ffcad4ff;
+  --light-pink: #f4acb7ff;
+  --mountbatten-pink: #9d8189ff;
+}
+nav {
+  height: 50px;
+  padding: 20px;
+  background-color: var(--pink);
+}
+
+nav a {
+  padding-right: 30px;
+  letter-spacing: 2px;
+  color: var(--mountbatten-pink);
+  font-size: 20px;
+}
+
+body {
+  background-color: var(--unbleached-silk);
+}
+
+main {
+  padding: 20px;
+}
+
+.header-div {
+  padding: 20px;
+  background-color: var(--pink);
+}
+
+.header {
+  background-color: var(--unbleached-silk);
+  margin: 20px;
+  width: 220px;
+  border-style: solid;
+  border-radius: 5px;
+  box-shadow: 5px 10px var(--mountbatten-pink);
+  text-align: center;
+}
+
+.post {
+  margin-bottom: 10px;
+  border-style: solid;
+}
+
+.post-row {
+  padding: 10px;
+  background-color: var(--pink);
+}
+
+.title {
+  color: var(--mountbatten-pink);
+}
+
+.post-user {
+  text-align: right;
+}
+
+.post-content {
+  padding-left: 10px;
+  padding-top: 10px;
+}
