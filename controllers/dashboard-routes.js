@@ -10,12 +10,11 @@ router.get("/", withAuth, async (req, res) => {
       where: { userId: req.session.userId },
       include: [User],
     });
-    const posts = dbPostData.map((post) => post.get({ raw: true }));
+    const posts = dbPostData.map((post) => post.get({ plain: true }));
 
     res.render("all-post", {
       layout: "dashboard",
       posts,
-      loggedIn: req.session.loggedIn,
     });
   } catch (err) {
     res.redirect("login");
@@ -26,7 +25,6 @@ router.get("/", withAuth, async (req, res) => {
 router.get("/new", withAuth, (req, res) => {
   res.render("new-post", {
     layout: "dashboard",
-    loggedIn: req.session.loggedIn,
   });
 });
 
@@ -40,7 +38,6 @@ router.get("/edit/:id", withAuth, async (req, res) => {
       res.render("edit-post", {
         layout: "dashboard",
         post,
-        loggedIn: req.session.loggedIn,
       });
     } else {
       alert("Failed to edit post");

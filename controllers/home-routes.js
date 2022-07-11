@@ -3,8 +3,6 @@ const { Comment, Post, User } = require("../models");
 // Import the custom middleware
 const withAuth = require("../utils/auth");
 
-module.exports = router;
-
 // get all posts
 // TODO: username print on homepage
 router.get("/", async (req, res) => {
@@ -66,3 +64,5 @@ router.get("/signup", (req, res) => {
 
   res.render("signup");
 });
+
+module.exports = router;
