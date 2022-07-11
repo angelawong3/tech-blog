@@ -1,0 +1,24 @@
+{{#if posts.length}}
+  {{#each posts as |post|}}
+    <div class="post">
+      <div class="post-row">
+        <div>
+          <h3>
+            <a href="dashboard/edit/{{id}}">
+              <div class="title">{{postTitle}}
+              </div>
+            </a>
+          </h3>
+        </div>
+        <div class="post-user">
+          <h6>
+            Posted by
+            {{user.username}}
+            on
+            {{format_date postDate}}
+          </h6>
+        </div>
+      </div>
+    </div>
+  {{/each}}
+{{/if}}
