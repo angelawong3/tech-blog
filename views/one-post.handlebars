@@ -24,6 +24,7 @@
   </div>
 </div>
 
+<input type="hidden" name="postId" value="{{post.id}}" />
 <form class="form new-comment-form">
   <div class="form-group">
     <label for="comment-content">Comment:</label>
@@ -45,7 +46,7 @@
     <div>
       <p>
         {{commentContent}}
-        -
+        by
         {{user.username}}
         {{format_date createdAt}}
       </p>
