@@ -1,7 +1,7 @@
 const newCommentHandler = async (event) => {
   event.preventDefault();
 
-  const postId = document.querySelector('input[name="post-id"]').value;
+  const postId = document.querySelector("#postId").value;
   const commentContent = document
     .querySelector("#comment-content")
     .value.trim();
