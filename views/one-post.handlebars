@@ -1,12 +1,27 @@
-<div class="text-center">
-  <a href="/post/{{id}}">
-    <div>{{postTitle}}</div>
-  </a>
-  <p>{{postContent}}</p>
-  <p>Posted by
-    {{user.username}}
-    on
-    {{format_date postDate}}</p>
+<div class="post">
+  <div class="post-row">
+    <div>
+      <h3>
+        <a href="/post/{{id}}">
+          <div class="title">{{postTitle}}
+          </div>
+        </a>
+      </h3>
+    </div>
+    <div class="post-user">
+      <h6>
+        Posted by
+        {{user.username}}
+        on
+        {{format_date postDate}}
+      </h6>
+    </div>
+  </div>
+  <div class="post-content">
+    <p class="card-body">
+      {{postContent}}
+    </p>
+  </div>
 </div>
 
 <form class="form new-comment-form">

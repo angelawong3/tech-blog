@@ -22,7 +22,8 @@ router.get("/", async (req, res) => {
 });
 
 // get one post by its id
-router.get("/post/:id", withAuth, async (req, res) => {
+// router.get("/post/:id", withAuth, async (req, res) => {
+router.get("/post/:id", async (req, res) => {
   try {
     const dbPostData = await Post.findByPk(req.params.id, {
       include: [User, { model: Comment, include: [User] }],
@@ -43,7 +44,9 @@ router.get("/post/:id", withAuth, async (req, res) => {
 router.get("/login", (req, res) => {
   // If the user is already logged in, redirect the request to another route
   if (req.session.logged_in) {
-    res.redirect("/dashboard");
+    // console.log("logged in");
+    // res.redirect("/dashboard");
+    res.render("dashboard-posts");
     return;
   }
 

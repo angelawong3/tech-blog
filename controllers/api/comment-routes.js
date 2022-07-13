@@ -5,7 +5,8 @@ const withAuth = require("../../utils/auth");
 // "/api/comment" endpoint
 
 // GET request to get all comments
-router.get("/", withAuth, async (req, res) => {
+// router.get("/", withAuth, async (req, res) => {
+router.get("/", async (req, res) => {
   try {
     const commentData = await Comment.findAll({
       include: [User],

@@ -5,7 +5,8 @@ const withAuth = require("../../utils/auth");
 // "/api/post" endpoint
 
 // POST request to add a new post
-router.post("/", withAuth, async (req, res) => {
+// router.post("/", withAuth, async (req, res) => {
+router.post("/", async (req, res) => {
   try {
     const newPost = await Post.create({
       ...req.body,
@@ -38,7 +39,8 @@ router.put("/:id", async (req, res) => {
 });
 
 // DELETE request to del an exisiting post
-router.delete("/:id", withAuth, async (req, res) => {
+// router.delete("/:id", withAuth, async (req, res) => {
+router.delete("/:id", async (req, res) => {
   try {
     const postData = await Post.destroy({
       where: {

@@ -4,7 +4,8 @@ const { Comment, Post, User } = require("../models");
 const withAuth = require("../utils/auth");
 
 // get all user's posts when logged in
-router.get("/", withAuth, async (req, res) => {
+// router.get("/", withAuth, async (req, res) => {
+router.get("/", async (req, res) => {
   try {
     const dbPostData = await Post.findAll({
       where: { userId: req.session.userId },
@@ -22,14 +23,16 @@ router.get("/", withAuth, async (req, res) => {
 });
 
 // to create new post
-router.get("/new", withAuth, (req, res) => {
+// router.get("/new", withAuth, (req, res) => {
+router.get("/new", (req, res) => {
   res.render("new-post", {
     layout: "dashboard",
   });
 });
 
 // to edit existing post
-router.get("/edit/:id", withAuth, async (req, res) => {
+// router.get("/edit/:id", withAuth, async (req, res) => {
+router.get("/edit/:id", async (req, res) => {
   try {
     const dbPostData = await Post.findByPk(req.params.id);
 
