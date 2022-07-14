@@ -1,17 +1,16 @@
+console.log("im in comment.js");
 const newCommentHandler = async (event) => {
   event.preventDefault();
 
   const postId = document.querySelector("#postId").value;
-  const commentContent = document
-    .querySelector("#comment-content")
-    .value.trim();
+  const commentContent = document.querySelector("#comment-content").value;
 
   if (postId && commentContent) {
     const response = await fetch(`/api/comment`, {
       method: "POST",
       body: JSON.stringify({
-        commentContent,
         postId,
+        commentContent,
       }),
       headers: {
         "Content-Type": "application/json",
