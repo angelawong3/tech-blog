@@ -1,8 +1,8 @@
 const editFormHandler = async (event) => {
   event.preventDefault();
 
+  //   const userId = document.querySelector("#userId").value;
   const postId = document.querySelector("#postId").value;
-  const userId = document.querySelector("#userId").value;
   const postTitle = document.querySelector("#post-title").value;
   const postContent = document.querySelector("#post-content").value;
 
@@ -10,7 +10,7 @@ const editFormHandler = async (event) => {
     method: "PUT",
     body: JSON.stringify({
       postId,
-      userId,
+      //   userId,
       postTitle,
       postContent,
     }),
