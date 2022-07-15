@@ -1,1 +1,41 @@
-<div>hello</div>
+<input id="postId" type="hidden" name="postId" value={{id}} />
+<input id="userId" type="hidden" name="userId" value={{user.id}} />
+
+<div class="post">
+  <div class="post-row">
+    <h3 class="card-header">Edit Post</h3>
+    <form class="form" id="edit-post-form">
+      <div class="title">
+        <label class="form-label">Title:</label>
+        <input
+          class="form-input"
+          type="text"
+          name="post-title"
+          id="post-title"
+          value={{post.postTitle}}
+        />
+      </div>
+
+      <div class="post-content">
+        <label class="form-content-title">Content:</label>
+        <textarea
+          class="form-textarea form-input"
+          name="post-content"
+          id="post-content"
+          data-number="8"
+        >{{post.postContent}}</textarea>
+      </div>
+
+      <button class="btn btn-primary" type="submit">Update Post</button>
+    </form>
+    <div class="card-body">
+      <button
+        class="btn btn-primary"
+        type="click"
+        id="delete-btn"
+        data-id={{post.id}}
+      >Delete</button>
+    </div>
+  </div>
+</div>
+<script src="/js/editPost.js"></script>
