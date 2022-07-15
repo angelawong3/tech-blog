@@ -10,12 +10,13 @@ router.get("/", async (req, res) => {
     const dbPostData = await Post.findAll({
       include: [User],
     });
-    const posts = dbPostData.map((post) => post.get({ raw: true }));
+    const posts = dbPostData.map((post) => post.get({ plain: true }));
 
-    res.render("all-post", {
-      posts,
-      logged_in: req.session.logged_in,
-    });
+    res.render(
+      "all-post",
+      { posts }
+      // logged_in: req.session.logged_in,
+    );
   } catch (err) {
     res.status(500).json(err);
   }
@@ -33,7 +34,7 @@ router.get("/post/:id", async (req, res) => {
 
     res.render("one-post", {
       ...post,
-      logged_in: req.session.logged_in,
+      // logged_in: req.session.logged_in,
     });
   } catch (err) {
     res.status(500).json(err);

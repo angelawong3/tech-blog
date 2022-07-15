@@ -11,7 +11,7 @@ router.get("/", async (req, res) => {
     const commentData = await Comment.findAll({
       include: [User],
     });
-    const comments = commentData.map((comment) => comment.get({ raw: true }));
+    const comments = commentData.map((comment) => comment.get({ plain: true }));
 
     res.render("one-post", { comments, loggedIn: req.session.loggedIn });
   } catch (err) {
@@ -27,6 +27,7 @@ router.post("/", async (req, res) => {
     const newComment = await Comment.create({
       ...body,
       postId: req.body.postId,
+      userId: req.body.userId,
     });
     res.json(newComment);
   } catch (err) {
