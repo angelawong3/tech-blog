@@ -1,5 +1,4 @@
 <input id="postId" type="hidden" name="postId" value={{post.id}} />
-<input id="userId" type="hidden" name="userId" value={{user.id}} />
 
 <div class="post">
   <div class="post-row">
@@ -7,13 +6,13 @@
     <form class="form" id="edit-post-form">
       <div class="title">
         <label class="form-label">Title:</label>
-        <input
+        <textarea
           class="form-input"
           type="text"
           name="post-title"
           id="post-title"
           value={{post.postTitle}}
-        />
+        >{{post.postTitle}}</textarea>
       </div>
 
       <div class="post-content">
