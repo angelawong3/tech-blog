@@ -1,8 +1,8 @@
 # Tech Blog
 
-## This is the repository for the tech blog
+### This is the repository for the tech blog
 
-## Table of Contents
+### Table of Contents
 
 - [Description](#description)
 - [Screenshot](#screenshot)
