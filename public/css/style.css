@@ -57,9 +57,15 @@ main {
 
 .post-user {
   text-align: right;
+  color: black;
 }
 
 .post-content {
   padding-left: 10px;
   padding-top: 10px;
+}
+
+#row-title {
+  padding-left: 10px;
+  text-align: left;
 }

@@ -4,7 +4,6 @@ const { Comment, Post, User } = require("../models");
 const withAuth = require("../utils/auth");
 
 // get all posts
-// TODO: username print on homepage
 router.get("/", async (req, res) => {
   try {
     const dbPostData = await Post.findAll({
@@ -23,8 +22,8 @@ router.get("/", async (req, res) => {
 });
 
 // get one post by its id
-// router.get("/post/:id", withAuth, async (req, res) => {
-router.get("/post/:id", async (req, res) => {
+router.get("/post/:id", withAuth, async (req, res) => {
+  // router.get("/post/:id", async (req, res) => {
   try {
     const dbPostData = await Post.findByPk(req.params.id, {
       include: [User, { model: Comment, include: [User] }],

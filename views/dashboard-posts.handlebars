@@ -2,14 +2,16 @@
   {{#each posts as |post|}}
     <div class="post">
       <div class="post-row">
-        <div>
-          <h3>
-            <a href="dashboard/edit/{{id}}">
-              <div class="title">{{postTitle}}
+        <a href="dashboard/edit/{{id}}">
+            <div class="title" id="row-title">
+              <h3>{{postTitle}}</h3>
+            </div>
+              <div class="post-user">
+                <h6>{{format_date postDate}}</h6>
               </div>
-            </a>
-          </h3>
-        </div>
+            </div>
+          </div>
+        </a>
       </div>
     </div>
   {{/each}}
