@@ -5,7 +5,7 @@
 ## Table of Contents
 
 - [Description](#description)
-- [Screenshots](#screenshots)
+- [Screenshot](#screenshot)
 - [Teachologies Used](#technologies-used)
 - [Link](#link)
 - [License](#license)
@@ -15,12 +15,10 @@
 
 A CMS-style blog site where developers can publish their blog posts and comment on other developers’ posts.
 
-### Screenshots
+### Screenshot
 
-![screenshot1]()
-Users may...
-![screenshot2]()
-Users may...
+![UI](./public/images/UI.png)
+User Interface
 
 ### Technologies Used
 
@@ -36,7 +34,7 @@ Users may...
 
 ### Link:
 
-Click []() to go to the app.
+Click [https://angelawong3-tech-blog.herokuapp.com/](https://angelawong3-tech-blog.herokuapp.com/) to go to the app.
 
 ### License
 
