@@ -11,11 +11,7 @@ router.get("/", async (req, res) => {
     });
     const posts = dbPostData.map((post) => post.get({ plain: true }));
 
-    res.render(
-      "all-post",
-      { posts }
-      // logged_in: req.session.logged_in,
-    );
+    res.render("all-post", { posts });
   } catch (err) {
     res.status(500).json(err);
   }
@@ -23,7 +19,6 @@ router.get("/", async (req, res) => {
 
 // get one post by its id
 router.get("/post/:id", withAuth, async (req, res) => {
-  // router.get("/post/:id", async (req, res) => {
   try {
     const dbPostData = await Post.findByPk(req.params.id, {
       include: [User, { model: Comment, include: [User] }],
